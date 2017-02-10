@@ -1,0 +1,63 @@
+﻿@model DesignSource.Models.ContactModels
+
+@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<div class="container">
+    <p>
+        Design Source was founded in 1996 by Chris Lynn and focused mainly on website design and development for small business. After working with static websites for several years, we expanded our team.
+        With each new team member we look for a new look on how to run the business, create new applications and refine our ideals to the best possible experience for the customer. Sometimes our team members
+        expand our services, with the addition of a few team member we started offering enterprise webpages with non-static content and database development. After development in non-staic pages started being
+        a success, we started building desktop applications which we have seen a majority of companies wanting to change over to web applications since to have the applicaiton work on all devices. After expanding
+        our team and services, we finally got into the mobile applicaiton development field in 2010, a few years after Apple's App Store launch. Today we work with business of all sizes for all kinds of applications.
+        We have seen a steady rise in the need for web and mobile applications in a movement away from desktop applications, to be more portable and flexible on any device. We have dedicated teams for all fields
+        with unique solutions experts in each of the industries respectively.
+    </p>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.FirstName, "First Name")
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.LastName, "Last Name")
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Email, "Email")
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+
+                <div class="col-md-6">
+                    @Html.LabelFor(model => model.Phone, "Phone")
+                    @Html.EditorFor(model => model.Phone)
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                @Html.LabelFor(model => model.Comment, "Comment")
+                @Html.TextAreaFor(model => model.Comment)
+            </div>
+
+            <div class="row">
+                <input type="submit" value="submit" />
+            </div>
+        </div>
+    }
+
+</div>
